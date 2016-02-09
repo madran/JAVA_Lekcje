@@ -1,0 +1,22 @@
+Metoda removeCharacter:
+usuwa z tablicy znaków znak z okreœlonego miejsca.
+
+Dane wejœciowe:
+*tablica znaków z której bêdziemy usuwaæ elementy,
+*index elementu do usuniêcia.
+
+Dane wyjœciowe
+nowa zmodyfikowana tablica.
+
+*******************************************************************************************************
+
+Metoda removeSubstring:
+usuwa z tablicy znaków podci¹g o danej d³ugoœci.
+
+Dane wejœciowe:
+*tablica znaków z której bêdziemy usuwaæ elementy,
+*index elementu od którego bêdziemy usuwaæ,
+*d³ugoœæ usuwanego podci¹gu.
+
+Dane wyjœciowe
+nowa zmodyfikowana tablica.

@@ -1,0 +1,21 @@
+Metoda divideArrayOnIndex:
+dzieli tablicê w miejscu oznaczonym przez wartoœæ indeksu tej tablicy.
+
+Dane wejœciowe:
+*tablica do podzia³u
+*wartoœæ indeksu tablicy
+
+Dane wyjœciowe:
+dwie nowe tablice powsta³e po podziale przekazanej tablicy
+
+***********************************************************************************************
+
+Metoda divideArrayOnChar:
+dzieli tablicê w miejscach wyst¹piênia danego znaku.
+
+Dane wejœciowe:
+*tablica do podzia³u
+*znak okreœlaj¹cy miejsce podzia³u
+
+Dane wyjœciowe:
+nowe tablice powsta³e po podziale przekazanej tablicy

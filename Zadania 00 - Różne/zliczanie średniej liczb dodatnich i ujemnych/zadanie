@@ -1,0 +1,8 @@
+Metoda findAverageNumber:
+wylicza œredni¹ osobno dla liczb dodatnich i ujemnych
+
+Dane wejœciowe:
+tablica z liczbami dodatnimi u ujemnymi
+
+Dane wyjœciowe
+tablica zawieraj¹ca œredni¹ dla liczb dodatnich i ujemnych

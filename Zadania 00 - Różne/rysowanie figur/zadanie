@@ -1,0 +1,84 @@
+Metoda createTriangle:
+Tworzy trójk¹t w postaci dwuwymiarowej tablicy.
+
+Dane wejœciowe:.
+d³ugoœæ wysokoœæ
+
+Dane wyjœciowe:
+dwuwymiarowa tablica zawieraj¹ca odwzorowanie trójk¹ta.
+
+Przyk³ad trójk¹ta o wysokoœci 5
+ 123456789
+1    *
+2   ***
+3  *****
+4 *******
+5*********
+
+* 		wysokoœæ 1, 0 spacji
+
+ *		wysokoœæ 2, 2 spacje po jednej spacji
+***
+
+  *		wysokoœæ 3, 4 spacje po dwie spacje
+ ***
+*****
+
+   *
+  ***
+ *****
+*******
+
+**************************************************************************************************
+
+Metoda createRectangle:
+Tworzy prostok¹t w postaci dwuwymiarowej tablicy.
+
+Dane wejœciowe:
+d³ugoœæ i szerokoœæ boków prostok¹ta
+
+Dane wyjœciowe:
+dwuwymiarowa tablica zawieraj¹ca odwzorowanie prostok¹ta
+
+**************************************************************************************************
+
+Metoda createDaimond:
+Tworzy romb w postaci dwuwymiarowej tablicy.
+
+Dane wejœciowe:
+szerokoœæ rombu.
+
+Dane wyjœciowe:
+tak jak dla trójk¹ta.
+
+Przyk³ad:
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+   
+**************************************************************************************************
+
+Metoda rotate:
+Odwraca przygotowan¹ figurê o dany k¹t.
+
+Dane wejœciowe:
+dwuwymiarowa tablica zawieraj¹ca przygotowan¹ figurê oraz wartoœæ obrotu w stopniach (90, - 90, 180).
+
+Dane wyjœciowe
+dwuwymiarowa tablica zawieraj¹ca odwrócon¹ figurê.
+
+   
+**************************************************************************************************
+
+Metoda draw:
+Rysuje przekazan¹ figurê.
+
+Dane wejœciowe:
+dwuwymiarowa tablica zawieraj¹ca przygotowan¹ figurê
+
+Dane wyjœciowe
+nic

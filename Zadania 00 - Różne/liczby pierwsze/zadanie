@@ -1,0 +1,8 @@
+ Metoda findPrimeNumbers:
+znajduje wszystkie liczby pierwsze od 0 do podanej wartoœci.
+
+Dane wejœciowe:
+liczba bêd¹ca granic¹ szukania liczb pierwszych.
+
+Dane wyjœciowe:
+tablica liczb pierwszych.

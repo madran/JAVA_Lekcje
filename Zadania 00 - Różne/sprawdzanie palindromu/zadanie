@@ -1,0 +1,27 @@
+********
+Palindrom to wyra¿enie brzmi¹ce tak samo czytane od lewej do prawej i od prawej do lewej.
+np. ala, abcdedcba, ³apa³
+********
+
+***************************************************************************************************************
+
+Metoda isPalindrome:
+
+Dane wejœciowe:
+tablica znaków
+
+Dane wyjœciowe:
+zwracaæ typ logiczny (zale¿ny czy tekst jest palindromem czy nie).
+
+***************************************************************************************************************
+
+Metoda validatePalidndrom:
+
+Dane wejœciowe:
+tablica znaków
+
+Dane wyjœciowe:
+tablica zawieraj¹ca  znak '*' na pozycjach gdzie litery s¹ identyczne oraz znak 'x' gdzie litery nie odpowiadaj¹ sobie
+
+***************************************************************************************************************
+

@@ -1,0 +1,12 @@
+Metoda liczbaUrodzenia:
+oblicza liczbê urodzenia na podstawie przekazanej daty.
+
+Dane wejœciowe:
+*dzieñ
+*miesi¹c
+*rok
+
+Dane wyjœciowe:
+liczba urodzenia.
+
+****************************************************************************************

@@ -1,0 +1,10 @@
+Metody:
+*binaryToDecimal
+*decimalToBianry
+*decimalToOctal
+*octalTodecimal
+*decimalToHexadecimal
+*hexadecimalToDecimal
+
+*binaryToHexadecimal
+*binaryToOctal

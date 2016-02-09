@@ -1,0 +1,11 @@
+Celem kalkulatora geometrycznego jest obliczanie w³asnoœci figur geometrycznych.
+Figury geometryczne maj¹ znajdowaæ siê w uk³adzie wspó³rzêdnych.
+Rozpoznanie figury musi odbywaæ siê na podstawie przyjêtych punktów:
+*punkt
+*prosta
+*k¹t
+*trójk¹t (ostrok¹tny, prostok¹tny, rozwartok¹tny)
+*prostok¹t (kwadrat)
+*trapez
+*romb
+*ko³o

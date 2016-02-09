@@ -1,0 +1,10 @@
+Metoda mergeText:
+
+Dane wejœciowe:
+dwie tablice zawieraj¹ce znaki
+
+Dane wyjœciowe:
+tablica znaków bêd¹ca po³¹czeniem obu przekazanych tablic
+
+Zasady:
+*do pierwszej tablicy (wed³ug kolejnoœci parametrów) ma byæ scalona druga.

@@ -1,0 +1,8 @@
+Metoda sumOfPrimeDigits:
+sumuje cyfry pierwsze znajduj¹ce siê w przekazanej liczbie.
+
+Dane wejœciowe:
+*liczba.
+
+Dane wyjœciowe:
+suma cyfr pierwszych z przekazanej liczby.
