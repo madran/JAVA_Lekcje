@@ -92,7 +92,27 @@ if(!(a < b)) //je¿eli a nie jest mniejsze od b (inaczej jest a >= b)
 if(a < c || a < b || (a < c && a < b)) //je¿eli a jest mniejsze od c lub a jest mniejsze od b lub a jest mniejsze od b i c
 
 //Metody tez mo¿na wykorzystaæ w warunkach je¿eli zwracaj¹ typ logiczny
-if(isNumber(1)) //Metoda 'isNumber' sprawdza czy przekazana wartoœæ jest liczb¹ czy nie (zwraca true lub false)
+if(isNumber(1)) {} //Metoda 'isNumber' sprawdza czy przekazana wartoœæ jest liczb¹ czy nie (zwraca true lub false)
+	
+
+
+//***********************************************************************
+//UWAGA                                                                 *
+//***********************************************************************
+//Operatory zwracaj¹ce wartoœæ logiczn¹ mo¿na wykorzystaæ jedynie 
+//do porównywania typów prostych. Typy z³o¿one jak obiekty i tablice
+//(tablice tez s¹ obiektami) wymagaj¹ napisania metod, które bêd¹
+//porównywaæ je w sposób okreslony przez u¿ytkownika.
+//Do porównania dwóch tablic mo¿na u¿yæ metody Array.equals()
+int tab1[] = {1, 2, 3};
+int tab2[] = {1, 2, 3}; 
+if(Array.equals(tab1, tab2)) {
+	//...
+}
+//U¿ycie operatorów logicznych do porównania dwóch zmiennych
+//przechowuj¹cych obiekty spowoduje porównanie jedynie tego
+//czy przechowuj¹ ten sam obiekt (czy porównywane zmienne wskazuj¹
+//na ten sam obiekty czy nie).
 
 
 
@@ -216,7 +236,7 @@ System.out.print(++a); //zwiêksz wartoœæ zmiennej 'a' o 1 a nastêpnie przeka¿ j¹
 
 //foreach
 //***********************************************************************
-//Pêtle foreach mo¿na wykorzystaæ jedynie do przechodzenia po tablicach (kolekcjach).
+//Pêtle foreach mo¿na wykorzystaæ jedynie do przechodzenia po kolekcjach (np. tablicach).
 
 char[] letters = {'a', 'b', 'c', 'd', 'e'};
 
@@ -227,4 +247,25 @@ char[] letters = {'a', 'b', 'c', 'd', 'e'};
 //    |       /tablica z której bêd¹ pobierane kolejne elementy
 for(char c : letters) {
     System.out.print(c);
+}
+
+
+
+
+//Instrukcje break i continue
+//***********************************************************************
+//Instrukcje break i continue s³u¿¹ do sterowania wykonywania siê pêtli.
+//Instrukcja break powoduje przerwanie dzia³ania pêtli a instrukcja continue powoduje zakoñczenie
+//jedynie ktualnej iteracji w pêtli i przejœcie do kolejnej
+
+for(int i = 0, suma = 0; i < tablicaLiczb.length; i++) {
+	if(tablicaLiczb[i] mod 2 == 1) {
+		continue; //Jezeli wartoœæ elementu tablicy jest nieparzysta to zakoñcz wykonywanie tej iteracji w petli
+		          //i przejdŸ do kolejnej (nie wykonuj¹ siê kolejne instrukcje, suma nie jest zwiêkszana, rozpoczyna siê
+		          //kolejna iteracja dla i + 1, (i siê zwiêksza, poniewa¿ nie znajduje siê w ciele petli (w nawiasach
+		          //klamorwych)))
+	}
+	
+	suma = suma + tablicaLiczb[i];
+	if(suma > 100) break; //Je¿eli wartoœæ zmiennej suma bêdzie wiêksza od 100 to pêtla zakoñczy swoje dzia³anie
 }
