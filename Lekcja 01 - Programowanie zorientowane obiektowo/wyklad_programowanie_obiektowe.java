@@ -93,6 +93,9 @@ car3.productionYear = 1991;
 //Zmienne jest miejscem przetrzymywania danych. Sk³ada siê z dwóch elementów:
 //nazwy symbolicznej, której celem jest nazwanie danych przetrzymywanych w zmiennej
 //oraz z odresu pamieci, w której przetrzymywane s¹ te dane.
+//Zmienne mo¿na wyobraziæ sobie jako pude³ka. Jest tyle ró¿nych pude³ek ile jest ró¿nych typów danych.
+//W pude³ku przetrzymywana jest konkretna wartoœæ, np. w pude³ku dla integerów znajdowaæ siê bêdzie jakaœ
+//liczba typu ca³kowitego np. 10.
 //Aby zadeklarowaæ zmienn¹ (utworzyæ now¹ zmienn¹) nalezy podaæ jej typ i nazwê.
 //  /typ zmiennej
 //  |
@@ -350,6 +353,52 @@ obiektA.zmianaObiektu(obiektB);       //Tutaj do metody 'zmianaObiektu' przekazu
                                       //Metoda ta przypisuje nowy obiekt do 'obiektB' i nadaje jego atrybutowi wartoœæ 15/
 System.out.print(obiektB.atrybut);    //Pomimo przypisania nowego obiektu z atrybutem o innej wartoœci
                                       //to zostanie wypisana wartoœæ 10.
+
+
+//PRzeci¹¿anie metod
+//*****************************************************************************
+//Przci¹¿anie metod to mo¿liwoœæ tworzenia wielu implementacji jednej metody, które s¹ zale¿ne od:
+//*iloœci paramwtrów,
+//*typów parametrów,
+//*kolejnoœci parametrów
+
+class PolePowierzchni {
+	int polePowierzchniProstok¹ta(int a, int b) {
+		return a * b;
+	}
+	
+	int polePowierzchniProstok¹ta(int a) {
+		return a*a;
+	}
+}
+
+PolePowierzchni obliczacz = new PolePowierzchni();
+obliczacz.polePowierzchniProstok¹ta(2, 3) //Wykona siê metoda, która zosta³a zadeklarowana z dwoma parametrami
+obliczacz.polePowierzchniProstok¹ta(2) //Wykona siê metoda, która zosta³a zadeklarowana z jednym parametrem
+
+class WypisywaczTypów {
+	void wypiszTyp(int a) {
+		System.out.println("To jest typ integer: " + a);
+	}
+	
+	void wypiszTyp(char a) {
+		System.out.println("To jest typ char: " + a);
+	}
+	
+	void kolejnoœæTypów(int a, char b) {
+		System.out.println("" + a + b);
+	}
+	
+	void kolejnoœæTypów(char a, int b) {
+		System.out.println("" + a + b);
+	}
+}
+
+WypisywaczTypów wypisywaczTypów = new WypisywaczTypów();
+wypisywaczTypów.wypiszTyp(1); //metoda wypisze w konsoli "To jest typ integer: 1"
+wypisywaczTypów.wypiszTyp('a'); //metoda wypisze w konsoli "To jest typ char: a"
+wypisywaczTypów.wypiszTyp(1, 'a'); //wypize 1a
+wypisywaczTypów.wypiszTyp('a', 1); //wypisze a1
 
 
 
