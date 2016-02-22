@@ -96,6 +96,11 @@ int[] myArray = new int[10];  //deklaracja i inicjalizacji tablicy liczb ca³kowi
 int[] myArray = {1, 2, 3, 4}; //skrócona deklaracja i inicjalizacja tablicy
 //Tablice s¹ obiektami. <-- Wa¿ne!
 
+//Mo¿liwe jest zadeklarowanie tablicy w jednym miejscu i przypisanie do niej d³ugoœci w innym:
+int[] myArray = null; //musi byæ przypisana wartoœæ null
+// ... du¿o kodu ...
+myArray = new array[10] //przypisanie do zmiennej myArray tablicy sk³adaj¹cej siê z 10 elementów typu int
+
 //Dostêp do komórek tablicy uzyskuje siê przez indeks numeryczny (indeks liczony jest od 0):
 myArray[0] = 10;
 myArray[1] = 11;
