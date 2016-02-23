@@ -9,9 +9,15 @@ public class PrzykladyFileReader {
 
 		BufferedReader br = new BufferedReader(fr);
 
-		String line = null;
-		while ((line = br.readLine()) != null) {
+//		String line = null;
+//		while ((line = br.readLine()) != null) {
+//			System.out.println(line);
+//		}
+
+		String line = br.readLine();
+		while (line != null) {
 			System.out.println(line);
+			line = br.readLine();
 		}
 
 		br.close();

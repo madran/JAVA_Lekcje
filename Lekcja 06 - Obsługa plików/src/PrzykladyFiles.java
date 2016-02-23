@@ -10,7 +10,7 @@ public class PrzykladyFiles {
 		Path path = Paths.get("dane"); //Klasa Path reprezentuje œcie¿kê do pliku
 
 		//Metoda readAllLines() przyjmuje jako argument jedynie obiekty typu Path
-		List<String> lines = Files.readAllLines(path);
+		List<String> lines = Files.readAllLines(path); //Klasa Files sama zamyka plik
 
 		for(String line : lines) {
 			System.out.println(line);

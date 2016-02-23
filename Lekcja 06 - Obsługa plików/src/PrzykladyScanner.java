@@ -15,7 +15,7 @@ public class PrzykladyScanner {
             System.out.println(scanner1.nextLine());
         }
 
-		scanner1.close();
+		scanner1.close();  //metoda zamykaj¹ca plik
 
 
 		//Czytanie kolejnych s³ów z pliku (domyœlnie rozdzielane spacj¹):
