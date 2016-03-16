@@ -1,32 +1,34 @@
 //*****************************************************************************
-//ObsÅ‚uga plikÃ³w tekstowych                                                   *
+//Obs³uga plikó³w tekstowych                                                  *
 //*****************************************************************************
 
 
 //File ---> https://docs.oracle.com/javase/7/docs/api/java/io/File.html
 //*****************************************************************************
-//Podstawowym elementem potzebnym do odczytywania plikÃ³w jest klasa File, ktÃ³ra
+//Podstawowym elementem potzebnym do odczytywania plikó³w jest klasa File, któ³ra
 //reprezentuje plik.
 File plik = new File("Sciezka/do/pliku.txt");
-//Do konstruktora moÅ¼na przekazac scieÅ¼kÄ™ relatwynÄ… jak i absolutnÄ… do pliku.
+//Do konstruktora mo¿na przekazac scie¿kê do pliku relatwyn¹ jak i absolutn¹.
 
 
 //*****************************************************************************
-//ÅšcieÅ¼ka relatywna to Å›ciezka wzglÄ™dna do pliku wykonywalnego.
-//W przypadku projektu w eclipse poprawnym miejsciem dla plikÃ³w jest
-//gÅ‚owny katlog projektu:
+//Œcie¿ka relatywna to œciezka prowadz¹ca od pliku w którym jest zawarta
+//do pliku, który chcemy otworzyæ.
+//W przypadku projektu w eclipse poprawnym miejsciem dla plików jest
+//g³ówny katlog projektu:
 
 //Projekt_1
-//â”‚
-//â”œâ”€â”€â”€src
-//â”‚   â””â”€â”€â”€ObslugaPlikow.java
-//â””â”€â”€â”€kontaky.txt
+//|
+//|---src
+//|   |---ObslugaPlikow.java
+//|---kontaky.txt
 
 //W takim przypadku:
-File plik = new File("kontaky.txt"); //relatywnie do ObslugaPlikow.java
-//to powinno dziaÅ‚aÄ‡.
+File plik = new File("kontaky.txt");
+//plik kontakty.txt znajduje siê w tym samym katalogu co ObslugaPlikow.java
+//to powinno dzia³¹æ.
 
-//ÅšcieÅ¼ka absolutna (bezwzglÄ™dna) to Å›cieÅ¼ka od samego szczytu drzewa katalogÃ³w np.:
+//Œcie¿ka absolutna (bezwzglêdna) to œcie¿ka od samego szczytu drzewa katalogów np.:
 //"C:/sciezka/do/jakiegos/pliku.txt"
 //*****************************************************************************
 
@@ -35,56 +37,56 @@ File plik = new File("kontaky.txt"); //relatywnie do ObslugaPlikow.java
 //Path  ---> https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html
 //Paths ---> https://docs.oracle.com/javase/7/docs/api/java/nio/file/Paths.html
 //*****************************************************************************
-//Czasami bÄ™dzie potrzebny obiekt klasy Path. Obiekty tej klasy reprezentujÄ… scieÅ¼kÄ™ do pliku.
-//Klasa ta nie ma konstruktora. Wykorzystuje siÄ™ jedynie jej metody statyczne
-//(metody statyczhne moÅ¼na wywoÅ‚aÄ‡ bez tworzenia obiektu danej klasy).
-//Sama klasa Path nie dostarcza metody, ktÃ³ra by przyjmowaÅ‚a do niej przekazanÄ… scieÅ¼kÄ™ w postaci ciÄ…gu,
-//do tego celu sÅ‚uÅ¼y klasa Paths. Klasa Paths dysponuje metodÄ… get(), do ktÃ³rej przekazuje siÄ™ scieÅ¼kÄ™ do
+//Czasami bêdzie potrzebny obiekt klasy Path. Obiekty tej klasy reprezentuj¹ scie¿kê do pliku.
+//Klasa ta nie ma konstruktora. Wykorzystuje siê jedynie jej metody statyczne
+//(metody statyczhne mo¹na wywo³ywaæ bez tworzenia obiektu danej klasy).
+//Sama klasa Path nie dostarcza metody, która by przyjmowa³a do niej przekazan¹ scie¿kê w postaci ci¹gu,
+//do tego celu s³u¿y klasa Paths. Klasa Paths dysponuje metod¹ get(), do której przekazuje siê scie¿kê do
 //pliku:
-Path scieÅ¼ka = Paths.get("Å›cieÅ¼ka/do/pliku.txt");
+Path scieÅ¼ka = Paths.get("sciezka/do/pliku.txt");
 
 
 
 //Scaner ---> https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
 //*****************************************************************************
-//Klasa Scaner sÅ‚uÅ¼y do odczytywania (i tylko do odczytywania) danych ze ÅºrÃ³deÅ‚ takich jak
-//dane wprowadzanie przez uÅ¼ytkownika, pliki czy ciÄ…gi (String). NaleÅ¼y do pakietu java.util.
-//Klasa Scaner dostarcza metody umoÅ¼liwiajÄ…ce rozpoznywanie podstawowych typÃ³w danych:
+//Klasa Scaner s³u¿y do odczytywania (i tylko do odczytywania) danych ze Ÿróde³‚ takich jak
+//dane wprowadzanie przez u¿ytkownika, pliki czy ci¹gi (String). Nale¿y do pakietu java.util.
+//Klasa Scaner dostarcza metody umo¿liwiaj¹ce rozpoznywanie podstawowych typów danych:
 
-//boolean hasNextLine() - zwraca true jeÅ¼eli istnieje nastÄ™pna linia w pliku
-//String nextLine() - zwraca kolejnÄ… liniÄ™ pliku
+//boolean hasNextLine() - zwraca true je¿eli istnieje nastêpna linia w pliku
+//String nextLine() - zwraca kolejn¹ liniê pliku
 
-//boolean hasNext() - zwraca wartoÅ›Ä‡ true jeÅ›li nastÄ™pna wartoÅ›Ä‡ dowolnego typu jest dostÄ™pna do odczytu.
-//String next() - zwraca odczytanÄ… nastÄ™pnÄ… wartoÅ›Ä‡ dowolnego typu.
+//boolean hasNext() - zwraca wartoœæ true je¿li nastêpna wartoœæ dowolnego typu jest dostêpna do odczytu.
+//String next() - zwraca odczytan¹ nastêpn¹ wartoœæ dowolnego typu.
 
-//boolean hasNextInt() - zwraca wartoÅ›Ä‡ true jeÅ›li nastÄ™pna wartoÅ›Ä‡ jest typu Integer.
-//int nextInt() - zwraca nastÄ™pnÄ… odczytanÄ… wartoÅ›Ä‡ typu int.
+//boolean hasNextInt() - zwraca wartoœæ true je¿li nastêpna wartoÅ›Ä‡ jest typu Integer.
+//int nextInt() - zwraca nastêpn¹ odczytan¹ wartoœæ typu int.
 
-//boolean hasNextDouble() - zwraca wartoÅ›Ä‡ true jeÅ›li nastÄ™pna wartoÅ›Ä‡ jest typu Double.
-//double nextDouble() - zwraca nastÄ™pnÄ… odczytanÄ… wartoÅ›Ä‡ typu Double.
+//boolean hasNextDouble() - zwraca wartoœæ true jje¿li nastêpna wartoœæ jest typu Double.
+//double nextDouble() - zwraca nastêpn¹ odczytan¹ wartoœæ typu Double.
 
 
 
 //Files ---> https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
 //*****************************************************************************
-//Klasa Files dostarcza szereg statycznych metod (metody statyczne moÅ¼na wywoÅ‚aÄ‡
-//bez tworzenia obiektu danej klasy), ktÃ³re umoÅ¼liwiajÄ… wykonywanie rÃ³Å¼nych operacji na plikach.
+//Klasa Files dostarcza szereg statycznych metod (metody statyczne mo¿na wywo³ywaæ
+//bez tworzenia obiektu danej klasy), które umo¿liwiaj¹ wykonywanie ró¿nych operacji na plikach.
 
 
 
-//Åadowanie caÅ‚ych plikÃ³w do pamiÄ™ci /\ ---> uÅ¼ywane gdy moÅ¼emy zaÅ‚adowaÄ‡ caÅ‚y plik do pamiÄ™ci
-//                                   ||      (nie jest za duÅ¼y)
+//£adowanie ca³ych plików do pamiêci /\ ---> u¿ywane gdy mo¿emy za³adowaæ ca³y plik do pamiêci
+//                                   ||      (nie jest za du¿y)
 //*****************************************************************************
 //                            ||
-//Buforowane Å‚adowanie plikÃ³w \/ ---> uÅ¼ywane do czytania duÅ¼ych plikÃ³w (np. > 1gb)
+//Buforowane ³adowanie plików \/ ---> u¿ywane do czytania du¿ych plik¿w (np. > 1gb)
 
 
 
 //FileReader     ---> https://docs.oracle.com/javase/7/docs/api/java/io/FileReader.html
 //BufferedReader ---> https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html
 //*****************************************************************************
-//Klasa FileReader i BufferedReader sÅ‚uÅ¼Ä… do czytania plikÃ³w tekstowych w postaci strumienia znakÃ³w.
-//UmoÅ¼liwia to Å‚adowanie fragmentu pliku do bufora danych, gdzie jest przetrzymywany. Gdy ten fragment
-//pliku nie jest juÅ¼ potrzebny, to jest usuwany z bufora i zapisywany jest do niego kolejny fragment pliku.
-//DziÄ™ki takiemu podejÅ›ciu moÅ¼eliwe jest przetwarzenie duÅ¼ych plikÃ³w, ktÃ³re sÄ… zbyt duÅ¼e by zaÅ‚adowac je
-//w caÅ‚oÅ›ci do pamiÄ™ci RAM.
+//Klasa FileReader i BufferedReader s³u¿¹ do czytania plików tekstowych w postaci strumienia znaków.
+//Umo¿liwia to ³adowanie fragmentu pliku do bufora danych, gdzie jest przetrzymywany. Gdy ten fragment
+//pliku nie jest ju¿ potrzebny, to jest usuwany z bufora i zapisywany jest do niego kolejny fragment pliku.
+//Dziêki takiemu podejœciu mo¿liwe jest przetwarzenie du¿ych plików, które s¹ zbyt du¿e by za³adowac je
+//w ca³oœci do pamiêci RAM.
