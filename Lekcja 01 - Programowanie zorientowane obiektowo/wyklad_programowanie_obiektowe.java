@@ -264,6 +264,10 @@ class Hero {
 
 Hero ranger = new Hero(100, 50);  //W tym przypadku przekazujemy do konstruktora nie zmienn¹
 Hero warrior = new Hero(75, 100); //a litera³ (konkretn¹ wartoœæ)
+//Konstruktor nie zwraca ¿adnej wartoœci.
+//Konstruktor mo¿na przeci¹¿yæ.
+//Je¿eli nie utworzymy w³asnego konstruktora to kompilator sam doda domyœlny konstruktor,
+//który nie przyjmuje ¿adnych parametrów.
 
 
 
@@ -344,18 +348,18 @@ class B {
 A obiektA = new A();
 B obiektB = new B();
 
-obiektB.atrybut = 5;                  //Prypisujemy do atrybutu obiektu 'obiektB' wartoœæ 5.
-obiektA.zmianaAtrybutu(obiektB);      //Przekazujemy 'obiektB' do metody 'zmianaAtrybutu'.
+obiektA.atrybut = 5;                  //Prypisujemy do atrybutu obiektu 'obiektB' wartoœæ 5.
+obiektB.zmianaAtrybutu(obiektA);      //Przekazujemy 'obiektB' do metody 'zmianaAtrybutu'.
                                       //Metoda ta zmienia wartoœæ atrybutu na 10.
-System.out.print(obiektB.atrybut);    //Wypisana zostanie wartoœæ 10.
+System.out.print(obiektA.atrybut);    //Wypisana zostanie wartoœæ 10.
 
-obiektA.zmianaObiektu(obiektB);       //Tutaj do metody 'zmianaObiektu' przekazujemy ten sam obiekt obiektB/
+obiektB.zmianaObiektu(obiektA);       //Tutaj do metody 'zmianaObiektu' przekazujemy ten sam obiekt obiektB/
                                       //Metoda ta przypisuje nowy obiekt do 'obiektB' i nadaje jego atrybutowi wartoœæ 15/
-System.out.print(obiektB.atrybut);    //Pomimo przypisania nowego obiektu z atrybutem o innej wartoœci
+System.out.print(obiektA.atrybut);    //Pomimo przypisania nowego obiektu z atrybutem o innej wartoœci
                                       //to zostanie wypisana wartoœæ 10.
 
 
-//PRzeci¹¿anie metod
+//Przeci¹¿anie metod
 //*****************************************************************************
 //Przci¹¿anie metod to mo¿liwoœæ tworzenia wielu implementacji jednej metody, które s¹ zale¿ne od:
 //*iloœci paramwtrów,
