@@ -19,18 +19,20 @@ public class Test {
 //		for (int i = 0; i < tablicaBezPodci¹gu.length; i++){
 //			System.out.print(tablicaBezPodci¹gu[i] + ", ");
 //		}
+String p;
+//		rek(10);
+		String a = "a" + 1 + 2;
+		char[] tab = {'K', 'a', 'm', 'i', 'l', 'k', 'a'};
+		String imiê2 = new String();
+		String tekst = "Ala ma kota a kot ma Ale";
+		System.out.print(tekst.contains("ala"));
 
-		rek(10);
+		StandardClass s = new StandardClass();
+		System.out.print(s.zwrocVall());
 
 	}
 
-	static int rek(int a) {
-		if (a > 0) {
-			System.out.println(a);
-			return rek(a - 1);
-		} else
-			return 0;
-	}
+
 
 	static char [] usuñPodci¹g (char [] tablica, int indeks, int d³ugoœæ){
 
