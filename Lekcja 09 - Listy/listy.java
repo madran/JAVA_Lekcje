@@ -2,21 +2,21 @@
 //Tablice                                                                     *
 //*****************************************************************************
 //Zalety:
-//*wydajnoœæ (sta³y czas dostêpu do elementów)
-//*wsparcie dla typów prostych
+//*wydajnoÅ›Ä‡ (staÅ‚y czas dostÄ™pu do elementÃ³w)
+//*wsparcie dla typÃ³w prostych
 //
 //Wady:
-//*sta³a d³ugoœæ
+//*staÅ‚a dÅ‚ugoÅ›Ä‡
 
-//Klasa pomocnicza java.util.Arrays dostarcza szereg metod umo¿liwiaj¹cych manipulowanie tablicami.
+//Klasa pomocnicza java.util.Arrays dostarcza szereg metod umoÅ¼liwiajÄ…cych manipulowanie tablicami.
 //Posiada takie metody jak:
-//binarySearch() - przeszukuje tablicê metod¹ binarn¹ (tablica musi byæ posortowana by algorytm dzia³a³ poprawnie)
-//copyOf() - zwraca kopiê przekazanej tablicy
-//copyOfRange() - zwraca kopiê z wybranego zakresu przekazanej tablicy
-//equals() - porównuje tablice
-//fill() - wype³nia tablicê przekazan¹ wartoœci¹
-//sort() - sortuje tablicê
-//Dok³adna dokumentacja:
+//binarySearch() - przeszukuje tablicÄ™ metodÄ… binarnÄ… (tablica musi byÄ‡ posortowana by algorytm dziaÅ‚aÅ‚ poprawnie)
+//copyOf() - zwraca kopiÄ™ przekazanej tablicy
+//copyOfRange() - zwraca kopiÄ™ z wybranego zakresu przekazanej tablicy
+//equals() - porÃ³wnuje tablice
+//fill() - wypeÅ‚nia tablicÄ™ przekazanÄ… wartoÅ›ciÄ…
+//sort() - sortuje tablicÄ™
+//DokÅ‚adna dokumentacja:
 //https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
 
 
@@ -24,59 +24,112 @@
 //*****************************************************************************
 //Kolekcje                                                                    *
 //*****************************************************************************
+//kolekcje moÅ¼na podzieliÄ‡ na dwa sposoby. Na ich rodzaje:
 //https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html
+//oraz na posÃ³b w jakie zostaÅ‚y zaimplementowane:
+//http://docs.oracle.com/javase/tutorial/collections/implementations/index.html
+
+//WyrÃ³Å¼niamy 5 podstawowych rodzajÃ³w kolekcji do kÃ³tych zaliczamy:
+//*Set (zbiÃ³r)
+//*List (lista)
+//*Queue (kolejka)
+//*Deque (kolejka dwÃ³kierunkowa)
+//*Map (mapa)
 
 //Struktura klas kolekcji
 //*****************************************************************************
-
-//Podstaw¹ kolekcji w Javie jest interfejs Collection
+//PodstawÄ… kolekcji w Javie jest interfejs Collection
 //https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html
-//Jest to interfejs ogólnego przeznaczenia, który umo¿liwia implementacje kolecji dowolnego rodzaju.
+//Jest to interfejs ogÃ³lnego przeznaczenia, ktÃ³ry umoÅ¼liwia implementacje kolecji dowolnego rodzaju.
+//Kolejne w hierarchii sÄ… interfejsy kolekcji konkretnego rodzaju jak Set, List, Queue i Deque.
+//UWAGA!!! Kolekcja Map nie wykorzystuje Interfejsu Collection.
+//PrÃ³cz samych interfejsÃ³w Java zawiera ich implementacje w postaci klas abstrakcyjnych np.:
+//*dla Collection bÄ™dzie AbstractCollection
+//*dla List bÄ™dzie AbstractList
+//*itd
+//Na samym koÅ„cu herarchii klas sÄ… implementacje poszczegÃ³lnych kolekcji takich jak ArrayList, LinkedList,
+//HashSet, LinkedHashSet itp.
 
-//Java zawiera 3 implementacje tego interfejsu w postaci klas HashSet, TreeSet i LinkedHashSet.
+//PrzykÅ‚adowa hierarchia:
+interface Collection 
+interface List
+abstract class AbstractCollection implements Collection
+abstract class AbstractList extends AbstractCollection implements List
+class ArrayList extends AbstractList
+//Klasa ArrayList dziedziczy po dwÃ³ch klasach abstrakcyjnych AbstractCollection i AbstractList oraz implemntuje
+//dwa interfejsy Collection oaz List
+
+//Metody implementacji kolekcji
+//*****************************************************************************
+//***Hash table (tablica mieszajÄ…ca (nie myliÄ‡ z klasÄ… HashTable)
+//Tablica mieszajÄ…ca to rodzaj struktÃ³ry umoÅ¼liwiajÄ…cej tworzenie relacji klucz wartoÅ›Ä‡.
+//Relacja taka powstajÄ™ dziÄ™ki funkcji mieszajacej. UmoÅ¼liwia ona przeliczenie wartoÅ›ci klucza
+//na pozycjÄ™ w tabeli, w ktÃ³rej zachowana jest wartoÅ›Ä‡. Funkcja mieszajÄ…ca zwraca tÄ… samÄ… wartoÅ›Ä‡.
+//PrzykÅ‚ad:
+//Klucz imiÄ™ = 'Kamilka';
+//int wartoÅ›Ä‡ = funkcjaMieszajÄ…ca('imiÄ™');
+//tablica[42] = 'Kamilka';
+//Instniej moÅ¼liwoÅ›Ä‡ zajÅ›cia sytuacji, w ktÃ³rej funkcja mieszajÄ…ca zwrÃ³ci takÄ… sama wartoÅ›Ä‡
+//dla dwÃ³ch rÃ³Å¼nych kluczy. Wtedy mÃ³wi sie o konflikcie i jest wiele metod ich rozstrzygania, ktÃ³rymi
+//tutaj sie nie zamiemy.
+
+//***Linked list (wskaÅºniki)
+//Linked list to struktÃ³ra skÅ‚adajÄ…ca siÄ™ z dwÃ³ch klas List i ListNode. Pierwsza reprezentuje listÄ™, druga jej elementy.
+//KaÅ¼dy obiekt klasy ListNode zawiera dwa atrybuty, ktÃ³re wskazujÄ… na element poprzedni i nastÄ™pny (jeÅ¼eli takiego
+//nie ma to na NULL); Klasa list posiada atrybut wskazujacy na pierwszy element listy.
+//            List head //poczÄ…tek listy
+//                  ||
+//                  \/
+//  NULL <- prev ListNode1 next
+//                  /\      ||
+//                  ||      \/
+//                 prev ListNode2 next
+//                         /\      ||
+//                         ||      \/
+//                        prev ListNode3 next -> NULL
+      
+//***Tree (drzewa)
+//W implemetnacjach kolekcji opartych na drzewach wykorzystuje sie drzewa czerwono-czarne. Jest to rodzaj
+//samoorganizujÄ…cego siÄ™ binarnego drzewa poszukiwaÅ„.
+
+//***Array (tablica)
+//ZwykÅ‚a tablica, ktÃ³ra bÄ™dzie "powiÄ™kszaÄ‡ siÄ™" gdy zabraknie jej elementÃ³w. PowiÄ™kszanie powiÄ™kszania siÄ™ tablicy
+//polega na utworzeniu nowej wiÄ™kszej i skopoiowaniu do niej wartoÅ›ci z wczesniejszej (mniejszej) tablicy.
+
+//Hash table + Linked list
+//
 
 //List (lista)
 //*****************************************************************************
-//Lista to uporz¹dkowana kolekcja umo¿liwiaj¹ca dostêp do elementu poprzez wartoœæ jego indeksu.
-//Umo¿liwia dodanie lub usuniêcie elementu w dowolnym miejscu.
+//Lista to uporzÄ…dkowana kolekcja umoÅ¼liwiajÄ…ca dostÄ™p do elementu poprzez wartoÅ›Ä‡ jego indeksu.
+//UmoÅ¼liwia dodanie lub usuniÄ™cie elementu w dowolnym miejscu.
 
 //Map
 //*****************************************************************************
-//Map to interfejs, który umo¿liwia przyporz¹dkowywanie wartoœci do klucza.
-//Nie mo¿na wykorzystaæ dwa razy tego samego klucza. Jeden klucz mo¿e byæ powi¹zany z jedn¹ wartoœci¹.
-//Przyk³ad:
+//Map to interfejs, ktÃ³ry umoÅ¼liwia przyporzÄ…dkowywanie wartoÅ›ci do klucza.
+//Nie moÅ¼na wykorzystaÄ‡ dwa razy tego samego klucza. Jeden klucz moÅ¼e byÄ‡ powiÄ…zany z jednÄ… wartoÅ›ciÄ….
+//PrzykÅ‚ad:
 Map(K, V) collection = new HashMap<K, V>();
 
 Map<String, String> osoba = new HashMap<String, String>();
-osoba.put('imiê', 'Kamilka');
+osoba.put('imiÄ™', 'Kamilka');
 osoba.put('nazwisko', 'Struszczak');
 osoba.Put('wiek', '18');
 
-Map<String, Integer> wyst¹pieniaS³ów = new HashMap<String, Integer>();
-wyst¹pieniaS³ów.put('pies', 6);
-wyst¹pieniaS³ów.put('kot', 7);
+Map<String, Integer> wystÄ…pieniaSÅ‚Ã³w = new HashMap<String, Integer>();
+wystÄ…pieniaSÅ‚Ã³w.put('pies', 6);
+wystÄ…pieniaSÅ‚Ã³w.put('kot', 7);
 
 //https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
 
-//Dwa obiekty klast Map s¹ takie same gdy posiadaj¹ identyczne powi¹zania klucz wartoœæ.
+//Dwa obiekty klast Map sÄ… takie same gdy posiadajÄ… identyczne powiÄ…zania klucz wartoÅ›Ä‡.
 //Java zawiera 3 implementacje tego interfejsu HashMap, TreeMap i LinkedHashMap
 
+//Set (zbiÃ³r)
 //*****************************************************************************
-//Hash table
-//Tablica mieszaj¹ca to rodzaj struktóry umo¿liwiaj¹cej tworzenie relacji klucz wartoœæ.
-//Relacja taka powstajê dziêki funkcji mieszajacej. Umo¿liwia ona przeliczenie wartoœci klucza
-//na pozycjê w tabeli, w której zachowana jest wartoœæ. Funkcja mieszaj¹ca zwraca t¹ sam¹ wartoœæ.
-//Przyk³ad:
-//Klucz imiê = 'Kamilka'
-//funkcjaChaszuj¹ca('imiê') -> zwraca 42
-//tablica[42] = 'Kamilka'
-//*****************************************************************************
-
-//Set (zbiór)
-//*****************************************************************************
-//Interfejs Set dziedzyczy po interfejsie Collection. Nie dodaje ¿adnych nowych metod.
-//Podstawow¹ ide¹ tej kolekcji jest odwzorowanie dzia³ania zbiorów matematycznych.
-//Nie jest mo¿liwe te¿ dodanie do niej dwóch takich samych elementów.
-//Dwa zbiory sa takie same gdy posiadaj¹ te same elementy.
-//Metody dodawania i odejmowania kolekcji dzia³aj¹ na zaszadzie zbiorów matematycznych (unie, przeciêcie itp.).
-//Nie ma mo¿liwoœci wyboru elementu poprzez klucz lub indeks. Zwracanie elementów odbywa siê jedynie przez iteracjê.
+//Interfejs Set dziedzyczy po interfejsie Collection. Nie dodaje Å¼adnych nowych metod.
+//PodstawowÄ… ideÄ… tej kolekcji jest odwzorowanie dziaÅ‚ania zbiorÃ³w matematycznych.
+//Nie jest moÅ¼liwe teÅ¼ dodanie do niej dwÃ³ch takich samych elementÃ³w.
+//Dwa zbiory sa takie same gdy posiadajÄ… te same elementy.
+//Metody dodawania i odejmowania kolekcji dziaÅ‚ajÄ… na zaszadzie zbiorÃ³w matematycznych (unie, przeciÄ™cie itp.).
+//Nie ma moÅ¼liwoÅ›ci wyboru elementu poprzez klucz lub indeks. Zwracanie elementÃ³w odbywa siÄ™ jedynie przez iteracjÄ™.
