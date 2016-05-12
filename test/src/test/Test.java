@@ -1,5 +1,9 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -19,16 +23,45 @@ public class Test {
 //		for (int i = 0; i < tablicaBezPodci¹gu.length; i++){
 //			System.out.print(tablicaBezPodci¹gu[i] + ", ");
 //		}
-String p;
+//		String p;
 //		rek(10);
-		String a = "a" + 1 + 2;
-		char[] tab = {'K', 'a', 'm', 'i', 'l', 'k', 'a'};
-		String imiê2 = new String();
-		String tekst = "Ala ma kota a kot ma Ale";
-		System.out.print(tekst.contains("ala"));
+//		String a = "a" + 1 + 2;
+//		char[] tab = {'K', 'a', 'm', 'i', 'l', 'k', 'a'};
+//		String imiê2 = new String();
+//		String tekst = "Ala ma kota a kot ma Ale";
+//		System.out.print(tekst.contains("ala"));
+//
+//		StandardClass s = new StandardClass();
+//		System.out.print(s.zwrocVall());
 
-		StandardClass s = new StandardClass();
-		System.out.print(s.zwrocVall());
+		ArrayList<String> lista = new ArrayList<>();
+
+		System.out.println("Pocz¹tkowy rozmiar listy: " + lista.size());
+
+		lista.add("Zielony");
+		lista.add("Niebieski");
+		lista.add("Czerwony");
+
+		System.out.println("Rozmiar listy po dodaniu elementów: " + lista.size());
+
+		System.out.println("Elementy listy: " + lista);
+		lista.add(1, "Ró¿owy");
+		System.out.println("Elementy lity po dodaniu ró¿oweg na pozycjê 1: " + lista);
+
+		System.out.println("Czy lista zawiera element 'Ró¿owy': " + lista.contains("Ró¿owy"));
+
+		System.out.println("Na pozycji 2 znajduje siê: " + lista.get(2));
+
+		System.out.println("Czerwony znajduje siê na pozycji: " + lista.indexOf("Czerwony"));
+
+		Collections.sort(lista);
+		System.out.println("Elementy listy po sortowaniu: " + lista);
+
+		lista.remove("Czerwony");
+		lista.remove(0);
+		System.out.println("Elementy listy po usuniêciu dwóch elementów: " + lista);
+
+		System.out.println("Czy lista jest pusta: " + lista.isEmpty());
 
 	}
 
