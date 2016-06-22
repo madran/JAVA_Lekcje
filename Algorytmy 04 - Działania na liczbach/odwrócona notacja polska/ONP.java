@@ -3,7 +3,7 @@ import java.util.Stack;
 public class ONP {
 
 	public static void main(String[] args) {
-		String[] tokens = new String[] { "2", "1", "+", "3", "*" };
+		String[] tokens = new String[] { "7", "2", "+", "3", "8", "*", "2", "1", "4", "-", "6", "+", "1", "-", "+", "+", "+"};
 		System.out.println(evalRPN(tokens));
 	}
 

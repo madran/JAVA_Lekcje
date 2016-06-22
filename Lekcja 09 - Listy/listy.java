@@ -26,14 +26,14 @@
 //*****************************************************************************
 //Kolekcje można podzielić na dwa sposoby. Na ich rodzaje:
 //https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html
-//oraz na posób w jakie zostały zaimplementowane:
+//oraz na sposób w jakie zostały zaimplementowane:
 //http://docs.oracle.com/javase/tutorial/collections/implementations/index.html
 
 //Wyróżniamy 5 podstawowych rodzajów kolekcji do kótych zaliczamy:
 //*Set (zbiór)
 //*List (lista)
 //*Queue (kolejka)
-//*Deque (kolejka dwókierunkowa)
+//*Deque (kolejka dwukierunkowa)
 //*Map (mapa)
 
 //Struktura klas kolekcji
@@ -47,7 +47,7 @@
 //*dla Collection będzie AbstractCollection
 //*dla List będzie AbstractList
 //*itd
-//Na samym końcu herarchii klas są implementacje poszczególnych kolekcji takich jak ArrayList, LinkedList,
+//Na samym końcu hirarchii klas są implementacje poszczególnych kolekcji takich jak ArrayList, LinkedList,
 //HashSet, LinkedHashSet itp.
 
 //Przykładowa hierarchia:
@@ -70,9 +70,9 @@ class ArrayList extends AbstractList
 //na pozycję w tabeli, w której zachowana jest wartość. Funkcja mieszająca musi zwracać zawsze tą samą wartość,
 //zależenie od przekazanego do niego klucza.
 //Przykład:
-//Klucz imię = "Kamilka";
-//int wartość = funkcjaMieszająca(imię); //Funkcja mieszająca będzie zwracać zawsze tą samą wartość
-                                         //gdy przekażemy do niej ciąg "Kamilka"
+//String klucz = "imię";
+//int wartość = funkcjaMieszająca(klucz); //Funkcja mieszająca będzie zwracać zawsze tą samą wartość
+                                          //gdy przekażemy do niej ciąg "imię"
 //tablica[wartość] = "Kamilka";
 //Instniej możliwość zajścia sytuacji, w której funkcja mieszająca zwróci taką sama wartość
 //dla dwóch różnych kluczy. Wtedy mówi sie o konflikcie i jest wiele metod ich rozstrzygania, którymi
@@ -86,13 +86,13 @@ class ArrayList extends AbstractList
 //            List head //wskazuje na początek listy
 //                  ||
 //                  \/
-//  NULL <- prev ListNode1 next
+//  NULL <- prev ListNode next  //obiekt1
 //                  /\      ||
 //                  ||      \/
-//                 prev ListNode2 next
+//                 prev ListNode next  //obiekt2
 //                         /\      ||
 //                         ||      \/
-//                        prev ListNode3 next -> NULL
+//                        prev ListNode next -> NULL  //obiekt3
 //
 //Listy mogą być jedno lub dwukierunkowe, w Javie są dwukierunkowe.
       
@@ -102,7 +102,7 @@ class ArrayList extends AbstractList
 
 //***Array (tablica)
 //Zwykła tablica, która będzie "powiększać się" gdy zabraknie jej elementów. Powiększanie się tablicy
-//polega na utworzeniu nowej większej i skopoiowaniu do niej wartości z wczesniejszej (mniejszej) tablicy.
+//polega na utworzeniu nowej większej i skopiowaniu do niej wartości z wczesniejszej (mniejszej) tablicy.
 
 //***Hash table + Linked list
 //
@@ -118,7 +118,7 @@ class ArrayList extends AbstractList
 
 //ArrayList
 //Implementacja ArrayList oparta jest na tablicy. W sytuacji gdy zaczyna brakować miejsca w tablicy
-//to tworzona jest nowa tablica większa (dwa razy?), do której kopiowane są wartosci z mniejszej tablicy.
+//to tworzona jest nowa tablica większa (dwa razy), do której kopiowane są wartosci z mniejszej tablicy.
 //Metody:
 boolean add(E e)
 //Dodaje element typu <E> do listy
@@ -156,7 +156,7 @@ Object[] toArray()
 
 //Użycie:
 
-List<String> lista = new ArrayList<>();
+ArrayList<String> lista = new ArrayList<>();
 
 System.out.println("Początkowy rozmiar listy: " + lista.size());
 
@@ -191,9 +191,9 @@ System.out.println("Czy lista jest pusta: " + lista.isEmpty());
 //Map to kolekcja, która umożliwia przyporządkowywanie wartości do klucza.
 //Nie można wykorzystać dwa razy tego samego klucza. Jeden klucz może być powiązany z jedną wartością.
 //Przykład:
-Map(K, V) collection = new HashMap<K, V>();
+HashMap(K, V) collection = new HashMap<K, V>();
 
-Map<String, String> osoba = new HashMap<String, String>();
+HashMap<String, String> osoba = new HashMap<String, String>();
 osoba.put("imię", "Kamilka");
 osoba.put("nazwisko", "Struszczak");
 osoba.put("wiek", "18");
@@ -218,24 +218,24 @@ boolean containsValue(Object value)
 //Czy lista jest pusta
 boolean isEmpty()
 
-//Liczba elementó
+//Liczba elementów
 int	size()
 
-Map<String, Integer> wystąpieniaSłów = new HashMap<String, Integer>();
+HashMap<String, Integer> wystąpieniaSłów = new HashMap<String, Integer>();
 wystąpieniaSłów.put('pies', 6);
 wystąpieniaSłów.put('kot', 7);
 
 //https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
 
-//Dwa obiekty klast Map są takie same gdy posiadają identyczne powiązania klucz wartość.
-//Java zawiera 3 implementacje tego interfejsu HashMap, TreeMap i LinkedHashMap
-
 //Stack
 //*****************************************************************************
 //Stack to stos. Stack dziedziczy po klasie Vector a Vector po AbstractList co oznacza, że
 //Stack jest implementacją listy. Klasa Vector działa podobnie do klasy ArrayList, różnice dotyczą
-//działania w przypadku programów wielowątkowch. Ogólnie Vector jest przestażałą klasą i należy
+//działania w przypadku programów wielowątkowch. Ogólnie Vector jest przestarzałą klasą i należy
 //stosować ArrayList.
+
+
+Stack<String> stos = new Stack<>();
 
 //Dostępne metody:
 boolean	empty()
@@ -245,10 +245,13 @@ E peek()
 //Zwraca wartość ze szczytu stosu nie usuwając jej (zerkać).
 
 E pop()
-//Zwraca wartość ze szczytu sotsu i usuwa ją (ściąganie wartości ze stosu)
+//Zwraca wartość ze szczytu stosu i usuwa ją (ściąganie wartości ze stosu)
 
 E push(E item)
 //Wpycha wartość na szczyt stosu
 
 int	search(Object o)
 //Zwraca 1 pozycję na stosie przekazanego obiektu.
+
+
+

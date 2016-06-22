@@ -13,10 +13,9 @@ public class SelectionSort {
 
 	public static void selectionSort(int[] tab) {
 	      int i, j, minIndex, tmp;
-	      int n = tab.length;
-	      for (i = 0; i < n - 1; i++) {
+	      for (i = 0; i < tab.length - 1; i++) {
 	            minIndex = i;
-	            for (j = i + 1; j < n; j++)
+	            for (j = i + 1; j < tab.length; j++)
 	                  if (tab[j] < tab[minIndex])
 	                        minIndex = j;
 	            if (minIndex != i) {

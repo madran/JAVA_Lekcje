@@ -2,44 +2,30 @@
 public class SzukanieLidera {
 
 	public static void main(String[] args) {
-		int[] zbior = {1, 2, 1, 3, 3, 3, 3, 2, 3};
-		System.out.println(szukanieLidera(zbior));
+		int[] zbior = {1, 1, 2, 3, 4, 5, 1, 1, 1};
+		szukanieLidera(zbior);
 	}
 
-	public static Integer szukanieLidera(int[] zbior) {
-		int lider = 0;
-		int licznik = 0;
-
-		for (int i = 0; i < zbior.length; i++)
+	public static void szukanieLidera(int[] tablica) {
+		int kandydatNaLidera = tablica [0];
+		int licznik = 1;
+		
+		for (int i = 1; i < tablica.length; i++){
+			if (tablica [i] == kandydatNaLidera) licznik ++;
+			else licznik --;
 			if (licznik == 0) {
-				lider = zbior[i];
+				kandydatNaLidera = tablica [i];
 				licznik = 1;
-			} else {
-				if (lider == zbior[i]) {
-					licznik++;
-				} else {
-					licznik--;
-				}
-			}
-
-		// Sprawdzamy, czy mamy lidera
-
-		if (licznik == 0) {
-			return null;
-		} else {
-			licznik = 0;
-			for (int i = 0; i < zbior.length; i++) {
-				if (lider == zbior[i]) {
-					licznik++;
-				}
-			}
-
-			if (licznik > zbior.length / 2) {
-				return new Integer(lider);
-			} else {
-				return null;
 			}
 		}
+		
+		int wyst¹pienieKandydataNaLidera = 0;
+		for (int i = 0; i < tablica.length; i++){
+			if (tablica[i] == kandydatNaLidera) wyst¹pienieKandydataNaLidera ++;
+		}
+	
+		if (wyst¹pienieKandydataNaLidera >= tablica.length / 2 + 1) System.out.print(kandydatNaLidera);
+		else System.out.print("Brak lidera");
 	}
 
 }

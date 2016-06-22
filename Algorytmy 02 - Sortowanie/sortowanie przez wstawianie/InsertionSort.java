@@ -17,8 +17,8 @@ public class InsertionSort {
 	//Przyk³ad tab = {4, 2, 7, 5, 9}
 	//Zaczynamy od drugiego elementu czyli liczby 2
 	//sprawdzamy czy jest mniejszy od 4
-	//jest wiêc 'wyci¹gamy' dwójkê ze swojego miesca
-	//i przesuwamy wszystko co jest przed niê (czwórka) o jedn¹ pozycjê
+	//jest wiêc 'wyci¹gamy' dwójkê ze swojego miejsca
+	//i przesuwamy wszystko co jest przed ni¹ (czwórka) o jedn¹ pozycjê
 	//a na wolne miejsce wstawiamy dwójkê
 	//nastêpnie bierzemy 7 i powtarzamy procedurê
 	public static void insertionSort(int[] tab) {

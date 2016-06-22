@@ -1,9 +1,10 @@
 
+
 public class najwiêkszyWspólnyDzielnik {
 
 	public static void main(String[] args) {
-		int a = 48;
-		int b = 18;
+		int a = 18;
+		int b = 48;
 
 		int d1 = gcd(a, b);
 		int d2 = gcd2(a, b);

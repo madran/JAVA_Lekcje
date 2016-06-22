@@ -21,7 +21,7 @@ public class LiczbyPierwsze {
 		tablicaLiczb [1] = true;
 
 
-		for (int i = 2; i * i <= tablicaLiczb.length; i++) {
+		for (int i = 2; i * i < tablicaLiczb.length; i++) {
 
 			for (int j = i * 2; j < tablicaLiczb.length; j = j + i) {
 
